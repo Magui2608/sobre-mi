@@ -1,0 +1,79 @@
+/*Resetea todos los elementos. Le quita el padding, el margen y el box-sizing: border-box 
+hace que el margin y el padding no ocupen espacio*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El en root creo variables globales con los colores de las redes sociales*/
+:root{
+    --facebook: #3b5999;
+    --instagram: #d70bc6;
+    --linkedIn: #035b8a;
+    --github: #0c0d0d;
+}
+
+/*Alinea los iconos y el contenido en el centro*/
+.redes_container{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Modifica los elementos li separándolos de forma horizontal,
+ con márgenes de distancia entre ellos y alineándolos al centro (al elemento a)*/
+.redes_container ul li{
+    display: inline-block;
+    margin: 0 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+/*Estilización de los elementos a. Le da a cada ícono, el color gris con fondo blanco
+con una sobra difuminada con una velocidad de transición, bordes redondeados y los alinea.*/
+.redes_container ul li a{
+    display: block;
+    padding: 8px 5px 0;
+    background: #333;
+    color: #fff;
+    line-height: 30px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 0px rgba(0,0,0,.2);
+    transition: .2s;
+    border-radius: 10px;
+}
+
+/*Hace que al pasar el cursor sobre los íconos de redes sociales, estos se vean desenfocados (efecto blur).*/
+.redes_container ul:hover a{
+    filter: blur(2px);
+}
+
+/*Esto hace el efecto de que al posar el cursor sobre uno de los íconos de redes sociales, 
+éste se destaque en tamaño y no esté desenfocado como los íconos restantes.*/
+.redes_container ul li a:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 5px 0px rgba(0,0,0,.4);
+    filter: none;
+}
+
+/*Aquí hacemos uso de las variables con los colores para cada red social,  
+aplicándola al ícono correspondiente a cada una. De manera que al pasar el cursor sobre el elemento, 
+éste se destaque cambiando de tamaño y de color sin difuminarse.*/
+.redes_container ul li .facebook:hover{
+    background: var(--facebook);
+}
+
+.redes_container ul li .instagram:hover{
+    background: var(--instagram);
+}
+
+.redes_container ul li .linkedIn:hover{
+    background: var(--linkedIn);
+}
+
+.redes_container ul li .github:hover{
+    background: var(--github);
+}
