@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Metadato acerca de del creador de la página y una descripción concisa de la misma -->
     <meta name="author" content="Magda Ichida" />
     <meta name="description" content="Trabajo practico N.0 del curso 'Páginas web con componentes dinámicos' 
     de Argentina Programa 4.0." />
+
     <!-- Añade favicon a la página web -->
     <link type="image/png" sizes="16x16" rel="icon" href="favicon.ico">
+
+    <!-- BOX ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
     <!-- Añade el archivo que le da el estilo a la página web -->
     <link rel="stylesheet" href="styles.css">
+
     <!-- Añade el titulo de la página web -->
     <title>Resumen del Alumno</title>
 </head>
@@ -19,18 +26,33 @@
 <body>
     <header>
         <h1>Información del Alumno</h1>
+        <h2 class="subtitle">Trabajo Práctico Nro. 0</h2>
         <!-- Añade imagen de fondo inicial a la página web -->
-        <img src="imagenes/Auto-panel.jpg" alt="Imagen tablero auto" title="Imagen tablero auto">
-    </header>
+        <img src="imagenes/Auto-panel.jpg" alt="Imagen tablero auto" title="Imagen tablero auto" width="1150px"
+            height="400px">
 
-    <nav class="Menu">
-        <!-- Agrega enlaces de navegación aquí (si es necesario) -->
-        <ul>
-            <li><a href="#">Datos Básicos</a></li>
-            <li><a href="#">Intereses</a></li>
-            <li><a href="#">Experiencia</a></li>
-          </ul>
-    </nav>
+        <nav class="nav_container">
+            <a href="extra/index.html" class="nav_cv"> <i><strong>Trabajo Extra</strong> - Currículum Vitae Magda
+                    Ichida</i></a>
+            <!-- Agrega enlaces de navegación aquí (si es necesario) -->
+            <div class="nav_menu" id="nav_menu">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#datos" class="nav_link">
+                            <i>Datos Básicos</i>
+                        </a>
+                    </li>
+                    <li class="nav_item"><a href="#intereses" class="nav_link">
+                            <i>Intereses</i>
+                        </a>
+                    </li>
+                    <li class="nav_item"><a href="#experiencia" class="nav_link">
+                            <i>Experiencia</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <article>
@@ -43,6 +65,7 @@
                 <li><strong>País: </strong>Argentina</li>
             </ul>
         </article>
+        <hr>
 
         <article>
             <h2>Intereses</h2>
@@ -52,31 +75,52 @@
                 <li>Treeking</li>
                 <li>Camping</li>
                 <li>Música</li>
-                <li>Escribir</li>
+                <li>Viajar</li>
                 <li>Juegos de escape</li>
-                <li>Peliculas y series</li>
+                <li>Gaming</li>
+                <li>Películas y series</li>
             </ul>
         </article>
+        <hr>
 
         <article>
             <h2>Experiencia</h2>
             <!-- Agrega las experiencias del alumno aquí -->
-            <p>Los últimos 13 años me he dedicado al <strong><em>Area automotriz</em></strong> como <em>gestora y especialista en Rentas</em>.</p>
+            <p>Los últimos 13 años me he dedicado al <b><em>Area automotriz</em></b> como <em>gestora y
+                    especialista en Rentas</em>.</p>
 
         </article>
     </main>
 
     <aside>
         <!-- Agrega contenido adicional o enlaces relacionados aquí (si es necesario) -->
-        <img src="imagenes/Auto-azul.jpg" alt="Imagen auto moderno digital" title="Imagen auto moderno digital">
+
+        <img src="imagenes/Auto-azul.jpg" alt="Imagen auto moderno digital" title="Imagen auto moderno digital"
+            width="800px" height="400px">
+
         <iframe width="610" height="343" src="https://www.youtube.com/embed/8vTL5d2Vk1E"
-        title="C5N AUTOS: TODAS las NOVEDADES de EXPOAGRO 2023"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+            title="C5N AUTOS: TODAS las NOVEDADES de EXPOAGRO 2023"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
     </aside>
 
     <footer>
         <!-- Agrega información del pie de página aquí -->
+        <address>
+            <div class="redes_container">
+                <ul>
+                    <li><a href="https://www.facebook.com/naoko.ishida.ono" class="facebook"><i
+                                class="bx bxl-facebook social_icon" style="font-size:28px"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/magda-ichida/" class="linkedIn"><i
+                                class="bx bxl-linkedin-square social_icon" style="font-size:28px"></i></a></li>
+                    <li><a href="https://github.com/Magui2608" class="github"><i class="bx bxl-github social_icon"
+                                style="font-size:28px"></i></a></li>
+                    <li><a href="https://www.instagram.com/naoko.ishida.ono/" class="instagram"><i
+                                class="bx bxl-instagram social_icon" style="font-size:28px"></i></a></li>
+                </ul>
+            </div>
+            <p class="copyright">&copy Copyright Magda Ichida. Argentina Programa 4.0. <br> Si quieres contactarme, escribe a <span>magui_ichida@hotmail.com</span></p>
+        </address>
     </footer>
 </body>
 
