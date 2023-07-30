@@ -7,34 +7,42 @@
 
     <!-- Metadato acerca de del creador de la página y una descripción concisa de la misma -->
     <meta name="author" content="Magda Ichida" />
-    <meta name="description" content="Trabajo practico N.0 del curso 'Páginas web con componentes dinámicos' 
+    <meta name="description" content="Trabajo práctico N.0 del curso 'Páginas web con componentes dinámicos' 
     de Argentina Programa 4.0." />
 
     <!-- Añade favicon a la página web -->
     <link type="image/png" sizes="16x16" rel="icon" href="favicon.ico">
 
-    <!-- BOX ICONS -->
+    <!-- Añade librería de Box Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-    <!-- Añade el archivo que le da el estilo a la página web -->
+    <!-- Añade el archivo css que da el estilo a la página web -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Añade el titulo de la página web -->
+    <!-- Añade el título de la página web -->
     <title>Resumen del Alumno</title>
 </head>
 
 <body>
     <header>
+        <!-- Título del documento -->
         <h1>Información del Alumno</h1>
+
+        <!-- Subtítulo del documento -->
         <h2 class="subtitle">Trabajo Práctico Nro. 0</h2>
+
         <!-- Añade imagen de fondo inicial a la página web -->
         <img src="imagenes/Auto-panel.jpg" alt="Imagen tablero auto" title="Imagen tablero auto" width="1150px"
             height="400px">
 
+        <!-- Agrega enlaces de navegación -->    
         <nav class="nav_container">
-            <a href="extra/index.html" class="nav_cv"> <i><strong>Trabajo Extra</strong> - Currículum Vitae Magda
+
+            <!-- Agrega enlace al trabajo extra -->
+            <a href="extra/index.html" class="nav_cv"> <i><strong>Trabajo Extra</strong> - Currículum Vitae de Magda
                     Ichida</i></a>
-            <!-- Agrega enlaces de navegación aquí (si es necesario) -->
+            
+            <!-- Contenedor con una lista de temas de la página enlazado a cada tema-->        
             <div class="nav_menu" id="nav_menu">
                 <ul class="nav_list">
                     <li class="nav_item"><a href="#datos" class="nav_link">
@@ -55,7 +63,8 @@
     </header>
 
     <main>
-        <article>
+        <!-- Contenedor con el tema de datos básicos--> 
+        <article class="datos" id="datos">
             <h2>Datos Básicos</h2>
             <!-- Agrega información básica del alumno aquí -->
             <ul>
@@ -67,7 +76,8 @@
         </article>
         <hr>
 
-        <article>
+        <!-- Contenedor con el tema de intereses--> 
+        <article class="intereses" id="intereses">
             <h2>Intereses</h2>
             <!-- Agrega los intereses del alumno aquí -->
             <ul>
@@ -83,7 +93,8 @@
         </article>
         <hr>
 
-        <article>
+        <!-- Contenedor con el tema de experiencia-->
+        <article class="experiencia" id="experiencia">
             <h2>Experiencia</h2>
             <!-- Agrega las experiencias del alumno aquí -->
             <p>Los últimos 13 años me he dedicado al <b><em>Area automotriz</em></b> como <em>gestora y
@@ -92,12 +103,14 @@
         </article>
     </main>
 
+    <!-- Contenedor que añade contenido adicional como imágenes o vdeos a un costado -->
     <aside>
-        <!-- Agrega contenido adicional o enlaces relacionados aquí (si es necesario) -->
 
+        <!-- Agrega una imagen -->
         <img src="imagenes/Auto-azul.jpg" alt="Imagen auto moderno digital" title="Imagen auto moderno digital"
             width="800px" height="400px">
 
+        <!-- Agrega un video externo con sus controles de reproducción manual-->
         <iframe width="610" height="343" src="https://www.youtube.com/embed/8vTL5d2Vk1E"
             title="C5N AUTOS: TODAS las NOVEDADES de EXPOAGRO 2023"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -105,8 +118,10 @@
     </aside>
 
     <footer>
-        <!-- Agrega información del pie de página aquí -->
+        <!-- Agrega información  de contacto sobre el propietario de la página como sus redes sociales e email -->
         <address>
+
+            <!-- Agrega íconos con enlaces a distintas redes sociales -->
             <div class="redes_container">
                 <ul>
                     <li><a href="https://www.facebook.com/naoko.ishida.ono" class="facebook"><i
@@ -119,6 +134,8 @@
                                 class="bx bxl-instagram social_icon" style="font-size:28px"></i></a></li>
                 </ul>
             </div>
+
+            <!-- Agrega nombre del creador de la página y enlace para contacto por email de forma centrada -->
             <p class="copyright"><center>&copy Copyright Magda Ichida. Argentina Programa 4.0. <br> Si quieres contactarme, escribe a <a href="mailto:magui_ichida@hotmail.com">magui_ichida@hotmail.com</a></center></p>
         </address>
     </footer>
