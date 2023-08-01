@@ -1,79 +1,270 @@
 /*Resetea todos los elementos. Le quita el padding, el margen y el box-sizing: border-box 
 hace que el margin y el padding no ocupen espacio*/
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* El en root creo variables globales con los colores de las redes sociales*/
-:root{
-    --facebook: #3b5999;
+:root {
     --instagram: #d70bc6;
-    --linkedIn: #035b8a;
+    --facebook: #3b5999;
     --github: #0c0d0d;
+    --linkedIn: #035b8a;
+}
+
+/* Aplico color de fondo a la página web y una fuente.*/
+body {
+    background-color: #dfdfdf56;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 100vh;
+}
+
+/* Aplico al header una imagen de fondo centrada con una altura de 300px.*/
+header {
+    background-image: url(imagenes/panel-auto.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+/* Añado color, sombra y alineación al título y al subtítulo. */
+h1,
+.subtitle {
+    color: #fff;
+    padding-bottom: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+/* Añado al título tamaño y estilo cursivo de fuente. También lo bajo un poco hacia el centro del header. */
+h1 {
+    font-size: 60px;
+    font-style: italic;
+    padding-top: 50px;
+}
+
+/* Añado al link del trabajo extra, color y lo alineo para que quede abajo de todo a la izquierda. */
+.extra_cv {
+    color: #ffffff;
+    padding-left: 20px;
+    text-align: end;
+}
+
+/* Añado al link del trabajo extra, un efecto que al pasar el mouse sobre él cambia el tamaño de fuente y su sombreado. */
+.extra_cv :hover {
+    font-size: 20px;
+    text-shadow: 4px 4px 4px rgb(5, 82, 88);
+}
+
+/*Agrego una imágen de fondo centrada al contenedor nav que cuando scroleo mueve la imagen de fondo.*/
+.nav_container {
+    background-attachment: fixed;
+    background-image: url(imagenes/dibujo-auto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+/*Agrego la altura del contenedor nav-menu y los margenes para que la imagen incrustada por el hover tome todo el contenido.*/
+.nav_menu {
+    height: 180px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Añado a los items de la lista de temas de la página un espaciado entre ellos.*/
+.nav_item {
+    padding: 10px;
+}
+
+/* Añado a los links de la lista de temas de la página un color al texto con efecto de sombreado y decoración.*/
+.nav_link {
+    color: #5ec6f3;
+    text-decoration: double;
+    text-shadow: 1px 4px 4px rgb(8, 54, 101);
+}
+
+/* Añado a los items de la lista de temas de la página, un efecto que al pasar el mouse sobre él cambia el tamaño de fuente, color, efecto de sombreado y de tiempo de transición del cambio.*/
+.nav_item :hover {
+    color: rgb(31, 187, 168);
+    font-size: 30px;
+    text-shadow: 1px 1px 1px rgb(5, 82, 88);
+    transition: 0.85s;
+}
+
+/* Añado a los títulos de la lista de temas de la página una fuente diferente, más grande y con mayor grosor.*/
+.nav_title {
+    font-family: fantasy;
+    font-size: x-large;
+    font-weight: 300;
+}
+
+/* Añado al un tamaño de altura, bordes y centro el texto.*/
+main {
+    text-align: center;
+}
+
+/* Añado a cada container bordes y formato.*/
+.data_container,
+.interest_container,
+.experience_container {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* Añado a título y al ícono de datos básicos, color y textura más un pequeño margen.*/
+.data_title {
+    border-left: 4px solid #e95df9;
+    color: #e152d7;
+    padding: 10px;
+}
+
+/*Agrega margen a la lista de datos y a la descripción de la sección experiencia.*/
+.data_list, .experience_description{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Añado a un pequeño margen a los elementos del ítem datos básicos, para que quede espaciado.*/
+.data_item {
+    padding: 5px;
+}
+
+/* Añado a título y al ícono de intereses, color y textura más un pequeño margen.*/
+.interest_title {
+    border-left: 4px solid #AD85BF;
+    color: #a93edb;
+    padding: 10px;
+}
+
+/* Añado margen a la lista de intereses, para que quede espaciado.*/
+.interest_list {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Añado a un pequeño margen a los elementos del ítem intereses, para que quede espaciado y le doy formato.*/
+.interest_item {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 5px 30px 5px;
+}
+
+/* Añado a los íconos del ítem intereses, tamaño de fuente, color y margen.*/
+.interest_icon {
+    color: #686e68;
+    font-size: 2.1rem;
+    margin-bottom: .25rem;
+}
+
+/* Añado a título y al ícono de experiencia, color y textura más un pequeño margen.*/
+.experience_title {
+    border-left: 4px solid #25D285;
+    color: #25D285;
+    padding: 10px;
+}
+
+/* Añado a la sección de imágen y video los márgenes.*/
+.secundary_container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Añado color de fondo y centro el texto del contenedor address. */
+address {
+    background-color: rgb(31, 187, 168);
+    padding-bottom: 15px;
+    padding-top: 20px;
+    text-align: center;
 }
 
 /*Alinea los iconos y el contenido en el centro*/
-.redes_container{
+.redes_container .copyright {
+    align-items: center;
     display: flex;
     height: 100vh;
-    align-items: center;
     justify-content: center;
 }
 
 /*Modifica los elementos li separándolos de forma horizontal,
  con márgenes de distancia entre ellos y alineándolos al centro (al elemento a)*/
-.redes_container ul li{
+.redes_container ul li {
     display: inline-block;
-    margin: 0 5px;
-    width: 50px;
     height: 50px;
+    margin: 0 5px;
     text-align: center;
+    width: 50px;
 }
 
 /*Estilización de los elementos a. Le da a cada ícono, el color gris con fondo blanco
 con una sobra difuminada con una velocidad de transición, bordes redondeados y los alinea.*/
-.redes_container ul li a{
-    display: block;
-    padding: 8px 5px 0;
+.redes_container ul li a {
     background: #333;
-    color: #fff;
-    line-height: 30px;
-    font-size: 18px;
-    box-shadow: 0 3px 5px 0px rgba(0,0,0,.2);
-    transition: .2s;
     border-radius: 10px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .2);
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 8px 5px 0;
+    transition: .2s;
 }
 
 /*Hace que al pasar el cursor sobre los íconos de redes sociales, estos se vean desenfocados (efecto blur).*/
-.redes_container ul:hover a{
+.redes_container ul:hover a {
     filter: blur(2px);
 }
 
 /*Esto hace el efecto de que al posar el cursor sobre uno de los íconos de redes sociales, 
 éste se destaque en tamaño y no esté desenfocado como los íconos restantes.*/
-.redes_container ul li a:hover{
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 5px 5px 0px rgba(0,0,0,.4);
+.redes_container ul li a:hover {
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
     filter: none;
+    transform: translateY(-3px) scale(1.05);
 }
 
 /*Aquí hacemos uso de las variables con los colores para cada red social,  
 aplicándola al ícono correspondiente a cada una. De manera que al pasar el cursor sobre el elemento, 
 éste se destaque cambiando de tamaño y de color sin difuminarse.*/
-.redes_container ul li .facebook:hover{
+.redes_container ul li .facebook:hover {
     background: var(--facebook);
 }
 
-.redes_container ul li .instagram:hover{
+.redes_container ul li .instagram:hover {
     background: var(--instagram);
 }
 
-.redes_container ul li .linkedIn:hover{
+.redes_container ul li .linkedIn:hover {
     background: var(--linkedIn);
 }
 
-.redes_container ul li .github:hover{
+.redes_container ul li .github:hover {
     background: var(--github);
+}
+
+/*Para poner despues a datos basicos, intereses y experiencia*/
+.navmap-list-title-bancoDeDados {
+    color: #EC6E5A;
+    border-left: 4px solid #EC6E5A;
+}
+
+.navmap-list-title-framework {
+    color: #AD85BF;
+    border-left: 4px solid #AD85BF;
+}
+
+.navmap-list-title-frontend {
+    color: #5EC6F3;
+    border-left: 4px solid #5EC6F3;
+}
+
+.navmap-list-title-backend {
+    color: #25D285;
+    border-left: 4px solid #25D285;
 }
