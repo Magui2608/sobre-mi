@@ -30,88 +30,86 @@
 
         <!-- Subtítulo del documento -->
         <h2 class="subtitle">Trabajo Práctico Nro. 0</h2>
+        <br>
+        <br>
 
-        <!-- Añade imagen de fondo inicial a la página web -->
-        <img src="imagenes/Auto-panel.jpg" alt="Imagen tablero auto" title="Imagen tablero auto" width="1150px"
-            height="400px">
-
-        <!-- Agrega enlaces de navegación -->    
-        <nav class="nav_container">
-
-            <!-- Agrega enlace al trabajo extra -->
-            <a href="extra/index.html" class="nav_cv"> <i><strong>Trabajo Extra</strong> - Currículum Vitae de Magda
-                    Ichida</i></a>
-            
-            <!-- Contenedor con una lista de temas de la página enlazado a cada tema-->        
-            <div class="nav_menu" id="nav_menu">
-                <ul class="nav_list">
-                    <li class="nav_item"><a href="#datos" class="nav_link">
-                            <i>Datos Básicos</i>
-                        </a>
-                    </li>
-                    <li class="nav_item"><a href="#intereses" class="nav_link">
-                            <i>Intereses</i>
-                        </a>
-                    </li>
-                    <li class="nav_item"><a href="#experiencia" class="nav_link">
-                            <i>Experiencia</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <!-- Agrega enlace al trabajo extra -->
+        <a href="extra/index.html" class="extra_cv"> <i><strong>Trabajo Extra</strong> - Currículum Vitae de Magda
+                Ichida</i></a>
     </header>
 
-    <main>
-        <!-- Contenedor con el tema de datos básicos--> 
-        <article class="datos" id="datos">
-            <h2>Datos Básicos</h2>
-            <!-- Agrega información básica del alumno aquí -->
-            <ul>
-                <li><strong>Nombre y apellido: </strong>Magda Ichida</li>
-                <li><strong>Dni: </strong>29.577.285</li>
-                <li><strong>Edad: </strong>40 años</li>
-                <li><strong>País: </strong>Argentina</li>
-            </ul>
-        </article>
-        <hr>
+    <!-- Agrega enlaces de navegación -->
+    <nav class="nav_container">
 
-        <!-- Contenedor con el tema de intereses--> 
-        <article class="intereses" id="intereses">
-            <h2>Intereses</h2>
-            <!-- Agrega los intereses del alumno aquí -->
-            <ul>
-                <li>Programación web</li>
-                <li>Treeking</li>
-                <li>Camping</li>
-                <li>Música</li>
-                <li>Viajar</li>
-                <li>Juegos de escape</li>
-                <li>Gaming</li>
-                <li>Películas y series</li>
+        <!-- Contenedor con una lista de temas de la página enlazado a cada tema-->
+        <div class="nav_menu" id="nav_menu">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="#data" class="nav_link">
+                        <i class="nav_title" id="nav_datos">Datos Básicos</i>
+                    </a>
+                </li>
+                <li class="nav_item"><a href="#interest" class="nav_link">
+                        <i class="nav_title" id="nav_intereses">Intereses</i>
+                    </a>
+                </li>
+                <li class="nav_item"><a href="#experience" class="nav_link">
+                        <i class="nav_title" id="nav_experiencia">Experiencia</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Contenedor con el tema de datos básicos-->
+        <article class="data_container">
+
+            <h2 class="data_title" id="data"><i class='bx bxs-id-card'></i> | Datos Básicos</h2>
+
+            <!-- Información básica del alumno -->
+            <ul class="data_list">
+                <li class="data_item"><strong>Nombre y apellido: </strong>Magda Ichida</li>
+                <li class="data_item"><strong>Dni: </strong>29.577.285</li>
+                <li class="data_item"><strong>Edad: </strong>40 años</li>
+                <li class="data_item"><strong>País: </strong>Argentina</li>
             </ul>
         </article>
-        <hr>
+
+        <!-- Contenedor con el tema de intereses-->
+        <article class="interest_container">
+            <h2 class="interest_title" id="interest"><i class='bx bxs-edit'></i> | Intereses</h2>
+            <!-- Agrega los intereses del alumno aquí -->
+            <ul class="interest_list">
+                <li class="interest_item"><i class='bx bx-code-alt interest_icon'></i>Programación web</li>
+                <li class="interest_item"><i class='bx bx-walk interest_icon'></i>Treeking</li>
+                <li class="interest_item"><i class='bx bxs-tree interest_icon'></i>Camping</li>
+                <li class="interest_item"><i class='bx bx-music interest_icon'></i>Música</li>
+                <li class="interest_item"><i class='bx bxs-plane-take-off interest_icon'></i>Viajar</li>
+                <li class="interest_item"><i class='bx bxs-door-open interest_icon'></i>Juegos de escape</li>
+                <li class="interest_item"><i class='bx bx-game interest_icon'></i>Gaming</li>
+                <li class="interest_item"><i class='bx bx-movie-play interest_icon'></i>Películas y series</li>
+            </ul>
+        </article>
 
         <!-- Contenedor con el tema de experiencia-->
-        <article class="experiencia" id="experiencia">
-            <h2>Experiencia</h2>
+        <article class="experience_container">
+            <h2 class="experience_title" id="experience"><i class='bx bxs-car'></i> | Experiencia</h2>
             <!-- Agrega las experiencias del alumno aquí -->
-            <p>Los últimos 13 años me he dedicado al <b><em>Area automotriz</em></b> como <em>gestora y
+            <p class="experience_description">Los últimos 13 años me he dedicado al <b><em>Area automotriz</em></b> como
+                <em>gestora y
                     especialista en Rentas</em>.</p>
-
         </article>
     </main>
 
-    <!-- Contenedor que añade contenido adicional como imágenes o vdeos a un costado -->
-    <aside>
+    <!-- Contenedor que añade contenido adicional como imágenes o videos a un costado -->
+    <aside lang="es" dir="ltr" class="secundary_container">
 
         <!-- Agrega una imagen -->
-        <img src="imagenes/Auto-azul.jpg" alt="Imagen auto moderno digital" title="Imagen auto moderno digital"
-            width="800px" height="400px">
+        <img src="imagenes/auto-azul.jpg" alt="Imagen auto moderno digital" title="Imagen auto moderno digital"
+            width="400px" height="250px">
 
         <!-- Agrega un video externo con sus controles de reproducción manual-->
-        <iframe width="610" height="343" src="https://www.youtube.com/embed/8vTL5d2Vk1E"
+        <iframe width="400px" height="250" src="https://www.youtube.com/embed/8vTL5d2Vk1E"
             title="C5N AUTOS: TODAS las NOVEDADES de EXPOAGRO 2023"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
@@ -135,8 +133,10 @@
                 </ul>
             </div>
 
-            <!-- Agrega nombre del creador de la página y enlace para contacto por email de forma centrada -->
-            <p class="copyright"><center>&copy Copyright Magda Ichida. Argentina Programa 4.0. <br> Si quieres contactarme, escribe a <a href="mailto:magui_ichida@hotmail.com">magui_ichida@hotmail.com</a></center></p>
+            <!-- Agrega nombre del creador de la página y enlace para contacto por email-->
+            <p class="copyright">&copy Copyright Magda Ichida. Argentina Programa 4.0. <br> Si quieres contactarme,
+                escríbeme a <a href="mailto:magui_ichida@hotmail.com">magui_ichida@hotmail.com</a>
+            </p>
         </address>
     </footer>
 </body>
