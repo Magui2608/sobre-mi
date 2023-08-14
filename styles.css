@@ -268,3 +268,9 @@ aplicándola al ícono correspondiente a cada una. De manera que al pasar el cur
     color: #25D285;
     border-left: 4px solid #25D285;
 }
+
+<!--para probar en videos imagenes
+.secundary_container{
+display: flex;
+    justify-content: center;
+}
