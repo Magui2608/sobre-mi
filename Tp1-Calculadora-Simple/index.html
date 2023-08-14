@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Metadato acerca de del creador de la página y una descripción concisa de la misma -->
+    <meta name="author" content="Magda Ichida">
+    <meta name="description" content="Trabajo práctico N.1 del curso 'Páginas web con componentes dinámicos' 
+         de Argentina Programa 4.0.">
+
+    <!-- Añade favicon a la página web -->
+    <link type="image/png" sizes="16x16" rel="icon" href="favicon.ico">
+
+    <!-- Añade librería de Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Añade la fuente que vamos a utilizar -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Fraunces:opsz,wght@9..144,200&display=swap"
+        rel="stylesheet">
+
+    <!-- Añade el archivo css que da el estilo a la página web -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Añade el título de la página web -->
+    <title>Calculadora Simple</title>
+</head>
+
+<body>
+    <header>
+        <!-- Título del documento -->
+        <h1>Trabajo Práctico N.1: Calculadora Simple</h1>
+    </header>
+    <main>
+        <!-- Creación de la estructura de la calculadora -->
+        <form id="calculadora">
+            <!-- Creación de una caja emn bloque dentro de la cual estará de la calculadora -->
+            <fieldset>
+                <!-- Título del fieldset -->
+                <legend>Calculadora</legend>
+
+                <!-- Crea una entrada de datos para el primer operando -->
+                <input type="text" id="operando1" placeholder="Operando 1" autofocus maxlength="5">
+
+                <!-- Crea una lista desplegable de opciones, en esta caso, operaciones matemáticas básicas -->
+                <select id="opciones">
+                    <option value="operaciones" disabled selected>Elije una operación</option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="promedio">Promedio</option>
+                </select>
+
+                <!-- Crea una entrada de datos para el segundo operando -->
+                <input type="text" id="operando2" placeholder="Operando 2" maxlength="5">
+
+                <!-- Crea un botón para calcular el resultado de la operación elegida -->
+                <button type="button" onclick="calcular();">Calcular</button>
+                
+                <!-- Crea un párrafo en donde se visualizará el resultado obtenido de la operación elegida -->
+                <p class="resultado">El resultado es: <span id="resultado"></span></p>
+
+                <!-- Crea un botón para limpiar todos los campos -->
+                <button class="limpiar-pantalla" onclick="limpiarPantalla();">Limpiar campos</button>
+
+            </fieldset>
+        </form>
+
+    </main>
+    <footer>
+        <!-- Agrega información  de contacto sobre el propietario de la página como sus redes sociales e email -->
+        <address>
+
+            <!-- Agrega íconos con enlaces a distintas redes sociales -->
+            <div class="redes_container">
+                <ul>
+                    <li><a href="https://www.facebook.com/naoko.ishida.ono" class="facebook"><i
+                                class="bx bxl-facebook social_icon" style="font-size:28px"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/magda-ichida/" class="linkedIn"><i
+                                class="bx bxl-linkedin-square social_icon" style="font-size:28px"></i></a></li>
+                    <li><a href="https://github.com/Magui2608" class="github"><i class="bx bxl-github social_icon"
+                                style="font-size:28px"></i></a></li>
+                    <li><a href="https://www.instagram.com/naoko.ishida.ono/" class="instagram"><i
+                                class="bx bxl-instagram social_icon" style="font-size:28px"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- Agrega nombre del creador de la página y enlace para contacto por email-->
+            <p class="copyright">&copy Copyright Magda Ichida. Argentina Programa 4.0. <br> Si quieres contactarme,
+                escríbeme a <a href="mailto:magui_ichida@hotmail.com">magui_ichida@hotmail.com</a>
+            </p>
+        </address>
+    </footer>
+
+    <!-- Añade el archivo index.js -->
+    <script src="index.js"></script>
+</body>
+
+</html>
