@@ -1,0 +1,167 @@
+/* Aplica a todo el documento un color y estilo de fuente. */
+* {
+    font-family: 'Fraunces', serif;
+    color: #fff;
+}
+
+/* El en root creo variables globales con los colores de las redes sociales
+y colores de background que voy a utilizar. */
+:root {
+    --instagram: #d70bc6;
+    --facebook: #3b5999;
+    --github: #0c0d0d;
+    --linkedIn: #035b8a;
+    --violeta: #915ab8;
+     --rosa: #c878d0;
+     --gris: #a8a1a1;
+     --tamano-base: 16px; /* Tamaño de fuente base */
+
+}
+
+/* Quita el margin al body y aplica un color de fondo. */
+body {
+    margin: 0;
+    background-color: var(--rosa);
+    font-size: var(--tamano-base);
+
+    /* Toma como altura, el total de la view (vista). */
+    height: 100vh;
+}
+
+/* Alinea el título al centro y le aplica un subrayado. */
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    
+}
+
+/* Centra todo el contenido del formulario y del fieldset. */
+form,
+fieldset {
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+
+    /* Alinea al centro el contenido en eje horizontal.*/
+    justify-content: center;
+
+    /* Alinea al centro el contenido en eje vertical. */
+    align-items: center;
+
+}
+
+/* Aplico al fieldset margen superior e inferior, un padding inferior, ancho con un 
+borde redondeado y de color. También agrando el tamaño de fuente por defecto. */
+fieldset {
+    border-color: #6b626b66;
+    border-radius: 20px;
+    font-size: 24px;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    width: 800px;
+    padding-top: 30px;
+}
+
+/* Modifica la apariencia de los botones de la calculadora.*/
+input,
+select,
+button {
+
+    /* Aplicamos al borde un redondeo, cambiamos el tamaño de la fuente, quitamos el borde 
+    por defecto y aplicamos color de fondo de los botones. */
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--violeta);
+
+    /* Le aplicamos el efecto de sombreado a los botones para que tengan la apariencia 
+    de relieve. Aplicamos dos sombras. */
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #ddb3e31f;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+
+    /* Quita el borde por defecto que se coloca cuando ponemos el cursor del mouse. */
+    outline: none;
+}
+
+/* Cambia el color del texto de referencia ubicado dentro del placeholder en el input. */
+input::placeholder {
+    color:var(--gris);
+}
+
+.resultado{
+    width: 500px;
+}
+
+/* Añado color de fondo y centro el texto del contenedor address. */
+address {
+    background-color: var(--violeta);
+    padding-bottom: 3px;
+    padding-top: 12px;
+    text-align: center;
+}
+
+/* Alinea los iconos y el contenido en el centro. */
+.redes_container .copyright {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Modifica los elementos li separándolos de forma horizontal,
+ con márgenes de distancia entre ellos y alineándolos al centro (al elemento a). */
+.redes_container ul li {
+    display: inline-block;
+    height: 50px;
+    margin: 0 5px;
+    text-align: center;
+    width: 50px;
+}
+
+/* Estilización de los elementos a. Le da a cada ícono, el color gris con fondo blanco
+con una sobra difuminada con una velocidad de transición, bordes redondeados y los alinea. */
+.redes_container ul li a {
+    background: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .2);
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 8px 5px 0;
+    transition: .2s;
+}
+
+/* Hace que al pasar el cursor sobre los íconos de redes sociales, estos se vean desenfocados (efecto blur). */
+.redes_container ul:hover a {
+    filter: blur(2px);
+}
+
+/* Esto hace el efecto de que al posar el cursor sobre uno de los íconos de redes sociales, 
+éste se destaque en tamaño y no esté desenfocado como los íconos restantes. */
+.redes_container ul li a:hover {
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
+    filter: none;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Aquí hacemos uso de las variables con los colores para cada red social,  
+aplicándola al ícono correspondiente a cada una. De manera que al pasar el cursor sobre el elemento, 
+éste se destaque cambiando de tamaño y de color sin difuminarse. */
+.redes_container ul li .facebook:hover {
+    background: var(--facebook);
+}
+
+.redes_container ul li .instagram:hover {
+    background: var(--instagram);
+}
+
+.redes_container ul li .linkedIn:hover {
+    background: var(--linkedIn);
+}
+
+.redes_container ul li .github:hover {
+    background: var(--github);
+}
+
