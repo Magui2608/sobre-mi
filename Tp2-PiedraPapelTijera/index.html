@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Metadato acerca de del creador de la página y una descripción concisa de la misma -->
+    <meta name="author" content="Magda Ichida">
+    <meta name="description" content="Trabajo práctico N.2 del curso 'Páginas web con componentes dinámicos' 
+         de Argentina Programa 4.0.">
+
+    <!-- Añade favicon a la página web -->
+    <link type="image/png" sizes="16x16" rel="icon" href="favicon.ico">
+
+    <!-- Añade librería de Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Añade el archivo css que da el estilo a la página web -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Añade el título de la página web -->
+    <title>Piedra, Papel o Tijera</title>
+</head>
+
+<body>
+    <header>
+        <!-- Título del documento -->
+        <h1>Piedra | Papel | Tijera</h1>
+        <p>Trabajo Práctico Nro. 2</p>
+    </header>
+    <main>
+        <p class="instrucciones" id="instrucciones">El mejor de <strong>5 intentos</strong> gana.</p>
+        <div class="marcador">
+            <p class="nombre nombre-jugador" id="nombre-jugador">Jugador</p>
+            <p class="nombre nombre-pc" id="nombre-pc">Computadora</p>
+            <p class="puntos">
+                <span class="puntos-jugador" id="puntos-jugador">0</span>
+                <span>-</span>
+                <span class="puntos-pc" id="puntos-pc">0</span>
+            </p>
+        </div>
+
+        <div class="campo-batalla">
+            <div class="ataque" id="ataque-jugador"></div>
+            <div class="ataque">
+                <p class="mensaje versus">VS</p>
+            </div>
+            <div class="ataque" id="ataque-pc"></div>
+        </div>
+
+        <h2>Elije una opción</h2>
+        <div class="opciones-juego">
+            <button class="opcion" id="piedra">
+                <img src="assets/piedra3.png" alt="imagen mano piedra" width="50px" height="50px">
+            </button>
+            <button class="opcion" id="papel">
+                <img src="assets/papel2.png" alt="imagen mano papel" width="50px" height="50px">
+            </button>
+            <button class="opcion" id="tijera">
+                <img src="assets/tijeras3.png" alt="imagen mano tijera" width="50px" height="50px">
+            </button>
+        </div>
+
+        <div class="mensaje disabled" id="mensaje">
+            <p>
+                Elegiste <span class="eleccion" id="eleccion-jugador"></span>
+                y la pc eligió <span class="eleccion" id="eleccion-pc"></span>
+            </p>
+            <p id="gana-punto"></p>
+        </div>
+        <button class="btn disabled" id="reiniciar">Reiniciar Juego</button>
+
+    </main>
+    <footer>
+        <!-- Agrega información  de contacto sobre el propietario de la página como sus redes sociales e email -->
+        <address>
+
+            <!-- Agrega íconos con enlaces a distintas redes sociales -->
+            <div class="redes_container">
+                <ul>
+                    <li><a href="https://www.facebook.com/naoko.ishida.ono" class="facebook"><i
+                                class="bx bxl-facebook social_icon" style="font-size:28px"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/magda-ichida/" class="linkedIn"><i
+                                class="bx bxl-linkedin-square social_icon" style="font-size:28px"></i></a></li>
+                    <li><a href="https://github.com/Magui2608" class="github"><i class="bx bxl-github social_icon"
+                                style="font-size:28px"></i></a></li>
+                    <li><a href="https://www.instagram.com/naoko.ishida.ono/" class="instagram"><i
+                                class="bx bxl-instagram social_icon" style="font-size:28px"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- Agrega nombre del creador de la página y enlace para contacto por email-->
+            <p class="copyright">&copy Copyright Magda Ichida. Argentina Programa 4.0. <br> Si quieres contactarme,
+                escríbeme a <a href="mailto:magui_ichida@hotmail.com">magui_ichida@hotmail.com</a>
+            </p>
+        </address>
+    </footer>
+
+    <!-- Añade el archivo index.js -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
