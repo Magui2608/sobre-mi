@@ -19,149 +19,174 @@ hace que el margin y el padding no ocupen espacio. */
 
 /* Añado color de fondo y el estilo de fuente. */
 body {
-    background-color:var(--background);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--background);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Añado estructura al header, le aplico color de fondo un pequeño padding 
 y le aplico los bordes inferiores un estilo redondeado. */
-header{
+header {
     align-items: center;
     background-color: var(--rosefoot);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     display: flex;
     flex-direction: column;
-    height:80px;
+    height: 80px;
     justify-content: center;
     padding: 1rem;
 }
 
 /* Le doy grosor a la fuente del título y un pequeño margen abajo 
 para que no quede muy pegado al subtítulo. */
-h1{
+h1 {
     font-weight: 400;
     padding-bottom: .5rem;
 }
 
 /* Añado estructura al main del css. */
-main{
+main {
+    align-items: center;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-/* Aplico al contenedor de instrucciones un tamaño de fuente, 
-un estilo cursivo y un margen inferior y superior. */
-.instrucciones{
+/* Aplico al contenedor de instrucciones un tamaño de fuente, color, estilo cursivo 
+y ancho, donde agrego color al borde a la fuente y un margen inferior y superior. */
+.instrucciones {
+    color: var(--rosefoot);
     font-size: 20px;
     font-style: italic;
-    margin-top: .5rem;
+    font-weight: bold;
     margin-bottom: .5rem;
+    margin-top: .5rem;
+    -webkit-text-stroke: .8px #0c0d0d;
 }
 
 /* Añado estilos al marcador poniendo un color de fondo verde, 
 márgenes y un efecto de borde redondeado */
-.marcador{
+.marcador {
+    align-items: center;
     background-color: var(--green);
-    padding: 1rem 2rem;
     border-radius: 1rem;
     margin-bottom: 1.5rem;
-    position: relative;
+    padding: 1rem 2rem;
+
     display: flex;
-    align-items: center;
+    position: relative;
+
 }
 
 /* Ubico el nombre del jugador a la izquierda del marcador y 
 le doy estilo al borde en color rosa y redondeado. */
-.marcador .nombre{
-    position: absolute;
+.nombre {
+    border: 2px solid var(--rosefoot);
+    border-radius: 0.5rem;
     line-height: 1;
     padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--rosefoot);
+
+    position: absolute;
+
 }
 
 /* Aplico un margen para que el nombre del jugador 
 quede a la derecha del tablero de puntos. */
-.marcador .nombre-jugador{
+.nombre-jugador {
     right: 105%;
 }
 
 /* Aplico un margen para que el nombre de la pc quede 
 a la izquierda del tablero de puntos. */
-.marcador .nombre-pc{
+.nombre-pc {
     left: 105%;
 }
 
 /* Agranda el tamaño de la fuente del marcador de puntos. */
-.marcador .puntos{
+.puntos {
     font-size: 2rem;
 }
 
 /* Doy estructura al campo de batalla del juego, alineo el 
 contenido al centro y aplico un borde de color redondeado. */
-.campo-batalla{
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+.campo-batalla {
+    align-items: center;
     border: 2px solid var(--rosefoot);
-    padding: 30px;
     border-radius: 20px;
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
 }
 
 /* Aplica un pequeño margen para el area del campo de batalla. */
-.ataque{
+.ataque {
     margin: 25px;
 }
 
-/* Agrego tamaño de fuente y centro el contenido del mensaje 
-sobre el resultado de cada ronda. */
-.mensaje{
-    font-size: 20px;
-    text-align: center;
-}
-
 /* Aplica tamaño de fuente, grosor, margen y centra el título de opciones. */
-h2{
+h2 {
     font-size: 1.5rem;
-    text-align: center; /* PUEDO BORRARLO*/
     font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
 /* Da estrucutura a la sección de opciones del juego. */
-.opciones-juego{
-    margin-bottom: 2rem;
-    display: flex;
+.opciones-juego {
     justify-content: center;
-    gap: 1rem;
+    margin-bottom: 2rem;
+
+    /*display: flex;*/
 }
 
-/* Añade tamaño de fuente, color de fondo, borde redondeado, un pequeño margen 
-y transforma el cursor en una manito a la sección de las opciones. */
-.opcion{
-    font-size: 1rem;
+/* Añade tamaño de fuente, color de fondo, borde redondeado, un pequeño margen. */
+.opcion {
     background-color: var(--rosefoot);
     border: 0;
     border-radius: 1rem;
-    padding: .3rem;
-    cursor: pointer;
+    font-size: 1rem;
+    padding: .3rem;    
 }
 
-/* Añade margen a la sección del mensaje. */
-.mensaje{
+/*Agrega animación sobre los botones de elecciones cuando se pasa el cursor sobre ellos, 
+haciendo que cambie su forma a redonda, con un borde color verde y que giren 360 grados. 
+También transforma el cursor en una manito cuando se pose en cada opción.*/
+.opcion:hover {
+    border: 5px solid var(--green);
+    border-radius: 3rem;
+    block-size: 5rem;
+    cursor: pointer;
+    inline-size: 5rem;
+    padding: .2rem;
+    transition: rotate 2s;
+    rotate: 360deg;
+}
+
+/* Agrego tamaño de fuente y centro el contenido del mensaje sobre el resultado 
+de cada ronda. También añado un borde de color redondeado. */
+.mensaje {
+    font-size: 20px;
     margin-bottom: 2rem;
+    text-align: center;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    padding: 1rem;
 }
 
 /* Añade color a la opción elegida. */
-.mensaje .eleccion{
+.mensaje .eleccion {
     color: var(--rosefoot);
+}
+
+#gana-punto {
+    color: var(--green);
+    font-size: x-large;
+    margin-top: 1rem;
 }
 
 /* Añade estilos al botón de reinicio del juego, con color de fondo, 
 márgenes, borde redondeado, tamaño de la fuente y cambio de estilo de cursor. */
-.btn{
+.btn {
     border: 0;
     line-height: 1;
     background-color: var(--rosefoot);
@@ -173,9 +198,15 @@ márgenes, borde redondeado, tamaño de la fuente y cambio de estilo de cursor. 
     text-transform: uppercase;
     font-weight: 600;
 }
+.btn:hover{
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .2);
+    font-size:larger;
+    background-color: var(--green);
+    transition: 300ms;
+}
 
-/*Sirve para ocultar elementos desde js*/
-.disabled{
+/*Sirve para ocultar elementos desde js.*/
+.disabled {
     display: none;
 }
 
