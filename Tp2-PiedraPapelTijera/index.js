@@ -19,20 +19,22 @@ if (jugador == null || !isNaN(jugador)) {
 let instrucciones = document.getElementById('instrucciones');
 let marcadorPuntosJugador = document.getElementById('puntos-jugador');
 let marcadorPuntosPc = document.getElementById('puntos-pc');
+let opcionesJuego = document.querySelector('.opciones-juego');
+let opcionElegida = document.querySelectorAll('.opcion');
 let mensaje = document.getElementById('mensaje');
-let ganaPunto = document.getElementById('gana-punto');
-
 let eleccionJugador = document.getElementById('eleccion-jugador');
 let eleccionPc = document.getElementById('eleccion-pc');
-let opcionesJuego = document.querySelector('.opciones-juego'); 
+let ganaPunto = document.getElementById('gana-punto');
+let campoBatalla = document.querySelector('.campo-batalla');
+let subtitulo = document.querySelector('.subtitulo');
 
 let puntosJugador = 0;
 let puntosPc = 0;
 
-
-let opcionElegida = document.querySelectorAll('.opcion');
 let opcionJugador;
 let opcionComputadora;
+let imgJugador;
+let imgPc;
 
 /* Captura a través del addEventListener, la elección al cliclear sobre los botones 
 de opciones y ejecuta la función de iniciar turno. */
@@ -108,17 +110,40 @@ function determinarGanador() {
 
         if (puntosJugador === 3) {
             instrucciones.innerHTML = "FELICIDADES! Ganaste el juego!🥳";
+            instrucciones.style.color = "green"; // Cambia el color del texto a verde
+            instrucciones.style.fontSize = "24px"; // Cambia el tamaño de fuente
+
+
             opcionesJuego.classList.add('disabled');
+            campoBatalla.classList.add('disabled');
+            subtitulo.classList.add('disabled');
             break;
         }
         if (puntosPc === 3) {
             instrucciones.innerHTML = "PERDISTE! La computadora ganó el juego.😓";
+            instrucciones.style.color = "red"; // Cambia el color del texto a verde
+            instrucciones.style.fontSize = "24px"; // Cambia el tamaño de fuente
+
             opcionesJuego.classList.add('disabled');
+            campoBatalla.classList.add('disabled');
+            subtitulo.classList.add('disabled');
             break;
         }
         totalRondas++;
     }
 }
+
+/* Defino una función que restablezca los estilos de las instrucciones a los valores originales. */
+function restaurarEstiloInstrucciones() {
+    instrucciones.style.color = "var(--rosefoot)";
+    instrucciones.style.fontSize = "20px";
+    instrucciones.style.fontStyle = "italic";
+    instrucciones.style.fontWeight = "bold";
+    instrucciones.style.marginBottom = ".5rem";
+    instrucciones.style.marginTop = ".5rem";
+    instrucciones.style.webkitTextStroke = ".8px #0c0d0d";
+}
+
 
 /* Resetea los datos del tablero de puntos y los restablece a 0, así como la cantidad de rondas. 
 También deshabilita en botón de reinicio  y de mensajes en el inicio del juego y habilita el de las
@@ -127,12 +152,19 @@ function reiniciarJuego() {
     reiniciar.classList.add('disabled');
     opcionesJuego.classList.remove('disabled');
     mensaje.classList.add('disabled');
+    campoBatalla.classList.add('disabled');
+    restaurarEstiloInstrucciones(); // Llama a la función para restaurar el estilo de las instrucciones
     puntosJugador = 0;
     puntosPc = 0;
     totalRondas = 0;
     marcadorPuntosJugador.innerHTML = puntosJugador;
     marcadorPuntosPc.innerHTML = puntosPc;
     instrucciones.innerHTML = "El mejor de <strong>5 intentos</strong> gana.";
+
+    // Elimina las imágenes del jugador y la computadora del campo de batalla
+    imgJugador.parentNode.removeChild(imgJugador);
+    imgPc.parentNode.removeChild(imgPc);
+
 }
 
 /* A través de la elección del jugador, llama a la función que determina la jugada de la pc, luego
@@ -140,13 +172,20 @@ determina quien ganó ese turno, habilita el apartado de mensaje para que indiqu
 por cada participante en mayúsculas y habilita el botón para reiniciar la partida en caso que
 sea requerido. */
 function iniciarTurno() {
+    campoBatalla.classList.remove('disabled');
     jugadaComputadora();
     determinarTurnoGanador();
+
+    // Modifica el contenido HTML de los contenedores para mostrar las imágenes
+    document.getElementById("ataque-jugador").innerHTML = `<img src="assets/${opcionJugador}.png" alt="imagen mano ${opcionJugador}" width="100px" height="100px" class="img-ataque">`;
+    document.getElementById("ataque-pc").innerHTML = `<img src="assets/${opcionComputadora}.png" alt="imagen mano ${opcionComputadora}" width="100px" height="100px" class="img-ataque">`;
+
     mensaje.classList.remove('disabled');
     eleccionJugador.innerHTML = opcionJugador.toUpperCase();
     eleccionPc.innerHTML = opcionComputadora.toUpperCase();
     reiniciar.classList.remove('disabled');
     reiniciar.addEventListener('click', reiniciarJuego);
+
 }
 
 
