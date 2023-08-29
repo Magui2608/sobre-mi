@@ -113,7 +113,8 @@ contenido al centro y aplico un borde de color redondeado. */
     align-items: center;
     border: 2px solid var(--rosefoot);
     border-radius: 20px;
-    padding: 30px;
+    margin-bottom: 1rem;
+    padding: 5px;
 
     display: flex;
     justify-content: center;
@@ -122,6 +123,11 @@ contenido al centro y aplico un borde de color redondeado. */
 /* Aplica un pequeño margen para el area del campo de batalla. */
 .ataque {
     margin: 25px;
+}
+
+.img-ataque{
+    border-radius: 3rem;
+
 }
 
 /* Aplica tamaño de fuente, grosor, margen y centra el título de opciones. */
@@ -135,8 +141,6 @@ h2 {
 .opciones-juego {
     justify-content: center;
     margin-bottom: 2rem;
-
-    /*display: flex;*/
 }
 
 /* Añade tamaño de fuente, color de fondo, borde redondeado, un pequeño margen. */
@@ -219,7 +223,6 @@ address {
     text-align: center;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
-
 }
 
 /* Alinea los iconos y el contenido en el centro. */
