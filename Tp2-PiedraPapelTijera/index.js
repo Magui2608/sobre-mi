@@ -4,7 +4,7 @@ let jugador = prompt("Bienvenido jugador! Por favor, ingresa tu nombre");
 // Utiliza trim() para eliminar los espacios en blanco al principio y al final del nombre.
 jugador = jugador.trim();
 
-/* Verifica si el nombre del jugador está en blanco o contiene solo espacios en blanco.
+/* Verifica si el nombre del jugador está en blanco o contiene solo espacios en blanco o si ingresa números.
 Luego, convierte la primera letra del nombre del jugador en mayúscula y convierte el resto 
 a minúsculas. Por último, asigna el nombre del jugador al elemento HTML correspondiente.*/
 if ((jugador === "") || !isNaN(jugador)) {
