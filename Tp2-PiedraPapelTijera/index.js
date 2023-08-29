@@ -149,7 +149,7 @@ function reiniciarJuego() {
     opcionesJuego.classList.remove('disabled');
     mensaje.classList.add('disabled');
     campoBatalla.classList.add('disabled');
-    restaurarEstiloInstrucciones(); 
+    restaurarEstiloInstrucciones();
     puntosJugador = 0;
     puntosPc = 0;
     totalRondas = 0;
@@ -175,6 +175,13 @@ function iniciarTurno() {
     // Modifica el contenido HTML de los contenedores para mostrar las imágenes
     document.getElementById("ataque-jugador").innerHTML = `<img src="assets/${opcionJugador}.png" alt="imagen mano ${opcionJugador}" width="100px" height="100px" class="img-ataque">`;
     document.getElementById("ataque-pc").innerHTML = `<img src="assets/${opcionComputadora}.png" alt="imagen mano ${opcionComputadora}" width="100px" height="100px" class="img-ataque">`;
+
+    // Agrega una pequeña pausa antes de aplicar la transformación para que la transición sea visible.
+    setTimeout(() => {
+        document.querySelectorAll(".img-ataque").forEach(img => {
+            img.style.transform = "scale(1.2)"; // Escala las imágenes en un 20%
+        });
+    }, 10); // Espera 10 milisegundos
 
     mensaje.classList.remove('disabled');
     eleccionJugador.innerHTML = opcionJugador.toUpperCase();
