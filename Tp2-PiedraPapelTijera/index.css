@@ -127,7 +127,7 @@ contenido al centro y aplico un borde de color redondeado. */
 
 .img-ataque{
     border-radius: 3rem;
-
+    transition: transform 0.3s ease-in-out; /* Agrega una transición suave a la propiedad transform */
 }
 
 /* Aplica tamaño de fuente, grosor, margen y centra el título de opciones. */
