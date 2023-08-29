@@ -1,17 +1,17 @@
-/* Solicitamos el nombre del jugador que guardamos en una variable usando prompt. Luego, tomamos 
-la primer letra de la string con charAt(0), para convertirla en mayúscula usando el toUpperCase() 
-y después tomamos los valores restantes con slice(1), y los pasamos a minúsculas con toLowerCase(). */
-
+// Captura del nombre del jugador utilizando un cuadro de diálogo.
 let jugador = prompt("Bienvenido jugador! Por favor, ingresa tu nombre");
-jugador = jugador.charAt(0).toUpperCase() + jugador.slice(1).toLowerCase();
 
-let nombre = document.querySelector(".nombre-jugador");
+// Utiliza trim() para eliminar los espacios en blanco al principio y al final del nombre.
+jugador = jugador.trim();
 
-
-// Valida que siempre se ingrese un nombre, no algo vacío o números y luego ingresa el nombre del jugador en el marcador.
-if (jugador == null || !isNaN(jugador)) {
+/* Verifica si el nombre del jugador está en blanco o contiene solo espacios en blanco.
+Luego, convierte la primera letra del nombre del jugador en mayúscula y convierte el resto 
+a minúsculas. Por último, asigna el nombre del jugador al elemento HTML correspondiente.*/
+if ((jugador === "") || !isNaN(jugador)) {
     alert("No has introducido tu nombre! Por favor, recarga la página e intentalo de nuevo.");
 } else {
+    jugador = jugador.charAt(0).toUpperCase() + jugador.slice(1).toLowerCase();
+    let nombre = document.querySelector(".nombre-jugador");
     nombre.textContent = jugador;
 }
 
@@ -36,8 +36,7 @@ let opcionComputadora;
 let imgJugador;
 let imgPc;
 
-/* Captura a través del addEventListener, la elección al cliclear sobre los botones 
-de opciones y ejecuta la función de iniciar turno. */
+// Agrega un evento de clic a cada botón de opción del juego.
 opcionElegida.forEach(btn => {
     btn.addEventListener("click", function (e) {
         opcionJugador = e.currentTarget.id;
@@ -45,13 +44,13 @@ opcionElegida.forEach(btn => {
     });
 })
 
-// Crea un número aleatorio entre entre 0 y 3.
+// Genera un número aleatorio entre 0 y 2 para representar la elección de la computadora.
 function numeroAleatorio() {
     let numeroAleatorio = Math.floor(Math.random() * 3);
     return numeroAleatorio;
 }
 
-// Determina la jugada de la computadora a partir del número aleatorio.
+// Determina la jugada de la computadora a partir del número aleatorio generado.
 function jugadaComputadora() {
     opcionComputadora = numeroAleatorio();
     if (opcionComputadora === 0) {
@@ -64,7 +63,7 @@ function jugadaComputadora() {
     return opcionComputadora;
 }
 
-// Determina quien gana en cada turno o si hay empate.
+// Determina quien gana en cada turno o si hay empate y actualiza los marcadores.
 function determinarTurnoGanador() {
     if ((opcionComputadora === "piedra" && opcionJugador === "tijera") ||
         (opcionComputadora === "papel" && opcionJugador === "piedra") ||
@@ -80,23 +79,21 @@ function determinarTurnoGanador() {
     determinarGanador();
 }
 
-/* Determina que por cada intento ganado por el jugador, sume un punto en el tablero a su favor,
-y muestre un mensaje indicando que ganó en esa ronda. */
+// Función para cuando el jugador gana un punto en un turno.
 function ganaJugador() {
     puntosJugador++;
     marcadorPuntosJugador.innerHTML = puntosJugador;
     ganaPunto.innerHTML = "Ganaste un punto!😊";
 }
 
-/* Determina que por cada intento ganado por la computadora, sume un punto en el tablero a su favor,
-y muestre un mensaje indicando que ganó en esa ronda. */
+// Función para cuando la computadora gana un punto en un turno.
 function ganaPc() {
     puntosPc++;
     marcadorPuntosPc.innerHTML = puntosPc;
     ganaPunto.innerHTML = "La computadora ganó un punto!😕";
 }
 
-// Muestra un mensaje en caso de empate y no suma puntos para ninguno.
+// Función para manejar un empate en un turno.
 function empate() {
     ganaPunto.innerHTML = "Empate!😮";
 }
@@ -133,7 +130,7 @@ function determinarGanador() {
     }
 }
 
-/* Defino una función que restablezca los estilos de las instrucciones a los valores originales. */
+/* Restablece los estilos de las instrucciones a los valores originales. */
 function restaurarEstiloInstrucciones() {
     instrucciones.style.color = "var(--rosefoot)";
     instrucciones.style.fontSize = "20px";
@@ -145,15 +142,14 @@ function restaurarEstiloInstrucciones() {
 }
 
 
-/* Resetea los datos del tablero de puntos y los restablece a 0, así como la cantidad de rondas. 
-También deshabilita en botón de reinicio  y de mensajes en el inicio del juego y habilita el de las
-opciones nuevamente. */
+/* Resetea los datos del tablero de puntos a 0 y la cantidad de rondas. Deshabilita en botón de 
+reinicio y mensajes y habilita el de las opciones nuevamente. */
 function reiniciarJuego() {
     reiniciar.classList.add('disabled');
     opcionesJuego.classList.remove('disabled');
     mensaje.classList.add('disabled');
     campoBatalla.classList.add('disabled');
-    restaurarEstiloInstrucciones(); // Llama a la función para restaurar el estilo de las instrucciones
+    restaurarEstiloInstrucciones(); 
     puntosJugador = 0;
     puntosPc = 0;
     totalRondas = 0;
