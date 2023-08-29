@@ -60,6 +60,7 @@ git clone https://github.com/Magui2608/sobre-mi.git
     + _Haz clic en "tag", busca el archivo **practico2** y haz clic en zip para descargarlo._
         >Imágenes de referencia
         ![Tag](assets/tag.png)
+
         
         >Imágenes de referencia
         ![zip](assets/tag-zip.png)
@@ -86,29 +87,38 @@ Abre el archivo `index.html` en tu navegador web para cargar el juego. Aquí tie
 Una vez que el juego se carga en tu navegador, realiza las siguientes operaciones para verificar su funcionamiento:
 
 - Ingresa tu nombre.
+
 ![Ingreso Nombre](assets/nombre.png)
 
 
 - Si se intenta ingresar números o no ingresar nada, se mostrará este texto:
+
 ![Validacion nombre](assets/validacion-nombre.png)
 
 - Pantalla de Inicio del Juego
+
 ![Pantalla inicial](assets/juego.png)
 
 - Elige una opción entre piedra, papel, tijera
+
 ![Opciones](assets/opciones.png)
 
 - Se mostrará el campo de batalla con la opción elegida por cada jugador
+
 ![Campo batalla](assets/batalla.png)
 
 -Debajo verás un mensaje que indica la elección de cada participante y quien gana la ronda o si ésta es un empate.
+
 ![Resultado ronda](assets/ronda.png)
 
 -En la parte superior, verás el marcador de puntos, en donde se computan las rondas ganadas por cada participante.
+
 ![Marcador](assets/puntos.png)
 
--Al finalizar las 5 rondas u obtener 3 victorias, el resultado del ganador del juego se mostrará en la parte superior de la página
+-Al finalizar las 5 rondas u obtener 3 victorias, el resultado del ganador del juego se mostrará en la parte superior de la página.
+
 ![Perdiste](assets/perdiste.png)
+
 ![Ganaste](assets/ganaste.png)
 
 ### Transiciones Suaves
