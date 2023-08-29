@@ -157,10 +157,13 @@ function reiniciarJuego() {
     marcadorPuntosPc.innerHTML = puntosPc;
     instrucciones.innerHTML = "El mejor de <strong>5 intentos</strong> gana.";
 
-    // Elimina las imágenes del jugador y la computadora del campo de batalla
-    imgJugador.parentNode.removeChild(imgJugador);
-    imgPc.parentNode.removeChild(imgPc);
-
+    // Elimina las imágenes del jugador y la computadora del campo de batalla si existen
+    if (imgJugador) {
+        imgJugador.parentNode.removeChild(imgJugador);
+    }
+    if (imgPc) {
+        imgPc.parentNode.removeChild(imgPc);
+    }
 }
 
 /* A través de la elección del jugador, llama a la función que determina la jugada de la pc, luego
