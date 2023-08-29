@@ -86,8 +86,230 @@ Abre el archivo `index.html` en tu navegador web para cargar el juego. Aquí tie
 Una vez que el juego se carga en tu navegador, realiza las siguientes operaciones para verificar su funcionamiento:
 
 - Ingresa tu nombre.
+![Ingreso Nombre](assets/nombre.png)
 
 
+- Si se intenta ingresar números o no ingresar nada, se mostrará este texto:
+![Validacion nombre](assets/validacion-nombre.png)
+
+- Pantalla de Inicio del Juego
+![Pantalla inicial](assets/juego.png)
+
+- Elige una opción entre piedra, papel, tijera
+![Opciones](assets/opciones.png)
+
+- Se mostrará el campo de batalla con la opción elegida por cada jugador
+![Campo batalla](assets/batalla.png)
+
+-Debajo verás un mensaje que indica la elección de cada participante y quien gana la ronda o si ésta es un empate.
+![Resultado ronda](assets/ronda.png)
+
+-En la parte superior, verás el marcador de puntos, en donde se computan las rondas ganadas por cada participante.
+![Marcador](assets/puntos.png)
+
+-Al finalizar las 5 rondas u obtener 3 victorias, el resultado del ganador del juego se mostrará en la parte superior de la página
+![Perdiste](assets/perdiste.png)
+![Ganaste](assets/ganaste.png)
+
+### Transiciones Suaves
+
+_Agregué transiciones suaves a las animaciones del juego para mejorar la experiencia del usuario. Después de mostrar el resultado, las imágenes vuelven a su escala original con una transición de 10 milisegundos. Esto hace que el juego se sienta más fluido y agradable de jugar._
+
+![Transiciones](assets/transiciones.png)
+
+### Características Destacadas
+
+- Juego contra la computadora.
+- Marcador de puntos para jugador y computadora.
+- Reglas claras y simples.
+
+### Personalización
+
+_Puedes personalizar la apariencia del juego modificando el archivo de estilos CSS. Las clases y estilos están organizados de manera que puedas ajustar los colores, fuentes y diseños según tus preferencias._
+
+### Ejemplo de Código: Validar nombre del jugador
+
+_En esta sección del código, verifico si el nombre del jugador está en blanco o contiene solo espacios en blanco o si ingresa números. Luego, convierte la primera letra del nombre del jugador en mayúscula y convierte el resto a minúsculas. Por último, asigna el nombre del jugador al elemento HTML correspondiente._
+
+```
+if ((jugador === "") || !isNaN(jugador)) {
+    alert("No has introducido tu nombre! Por favor, recarga la página e intentalo de nuevo.");
+} else {
+    jugador = jugador.charAt(0).toUpperCase() + jugador.slice(1).toLowerCase();
+    let nombre = document.querySelector(".nombre-jugador");
+    nombre.textContent = jugador;
+}
+```
+### Ejemplo de Código: Iniciar un Turno
+
+_En esta sección del código, se muestra cómo se inicia un turno del juego cuando el jugador elige una opción._
+
+```
+// Función para iniciar un turno
+   function iniciarTurno() {
+       campoBatalla.classList.remove('disabled');
+       jugadaComputadora();
+       determinarTurnoGanador();
+
+    // Modifica el contenido HTML de los contenedores para mostrar las imágenes
+       document.getElementById("ataque-jugador").innerHTML = `<img src="assets/${opcionJugador}.png" alt="imagen mano ${opcionJugador}" width="100px" height="100px" class="img-ataque">`;
+       document.getElementById("ataque-pc").innerHTML = `<img src="assets/${opcionComputadora}.png" alt="imagen mano ${opcionComputadora}" width="100px" height="100px" class="img-ataque">`;
+
+       mensaje.classList.remove('disabled');
+       eleccionJugador.innerHTML = opcionJugador.toUpperCase();
+       eleccionPc.innerHTML = opcionComputadora.toUpperCase();
+       reiniciar.classList.remove('disabled');
+       reiniciar.addEventListener('click', reiniciarJuego);
+   }
+```
+
+### Ejemplo de Código: Capturar la elección del jugador
+
+_En esta sección del código, agrego un evento de clic a cada botón de opción del juego, para capturar la elección del jugador._
+
+```
+opcionElegida.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+        opcionJugador = e.currentTarget.id;
+        iniciarTurno();
+    });
+})
+```
+
+### Ejemplo de Código: Jugada de la computadora
+
+_En esta sección del código, genero un numero aleatorio del 0 al 2 para poder asignarle a cada uno los valores de piedra, papel o tijera y determinar así la jugada aleatoria del la pc._
+
+```
+// Genera un número aleatorio entre 0 y 2 para representar la elección de la computadora.
+function numeroAleatorio() {
+    let numeroAleatorio = Math.floor(Math.random() * 3);
+    return numeroAleatorio;
+}
+
+// Determina la jugada de la computadora a partir del número aleatorio generado.
+function jugadaComputadora() {
+    opcionComputadora = numeroAleatorio();
+    if (opcionComputadora === 0) {
+        opcionComputadora = "piedra";
+    } else if (opcionComputadora === 1) {
+        opcionComputadora = "papel";
+    } else {
+        opcionComputadora = "tijera";
+    }
+    return opcionComputadora;
+}
+```
+### Ejemplo de Código: Ganador de la ronda
+
+_En esta sección del código, determino quien gana cada ronda o si hay un caso de empate._
+
+```
+// Determina quien gana en cada turno o si hay empate y actualiza los marcadores.
+function determinarTurnoGanador() {
+    if ((opcionComputadora === "piedra" && opcionJugador === "tijera") ||
+        (opcionComputadora === "papel" && opcionJugador === "piedra") ||
+        (opcionComputadora === "tijera" && opcionJugador === "papel")) {
+        ganaPc();
+    } else if ((opcionJugador === "piedra" && opcionComputadora === "tijera") ||
+        (opcionJugador === "papel" && opcionComputadora === "piedra") ||
+        (opcionJugador === "tijera" && opcionComputadora === "papel")) {
+        ganaJugador();
+    } else {
+        empate();
+    }
+    determinarGanador();
+}
+```
+### Ejemplo de Código: Asignación de puntos en el marcador
+
+_En esta sección del código, determino cómo se asignan los puntos ganados a cada jugador o si es un empate, que no sume puntos a ninguno. También notifica si esa ronda fue ganada o empatada y por quién._
+
+```
+// Función para cuando el jugador gana un punto en un turno.
+function ganaJugador() {
+    puntosJugador++;
+    marcadorPuntosJugador.innerHTML = puntosJugador;
+    ganaPunto.innerHTML = "Ganaste un punto!😊";
+}
+
+// Función para cuando la computadora gana un punto en un turno.
+function ganaPc() {
+    puntosPc++;
+    marcadorPuntosPc.innerHTML = puntosPc;
+    ganaPunto.innerHTML = "La computadora ganó un punto!😕";
+}
+
+// Función para manejar un empate en un turno.
+function empate() {
+    ganaPunto.innerHTML = "Empate!😮";
+}
+```
+
+### Ejemplo de Código: Determinar ganador
+
+_En esta sección del código, se determina quién es el ganador de 5 intentos o aquel que alcance primero 3 victorias._
+
+```
+/* Cuenta las rondas hasta un máximo de 5 intentos y verifica si uno de los jugadores ha 
+alcanzado 3 victorias. Luego, muestra el mensaje correspondiente y desactiva las opciones de juego. */
+function determinarGanador() {
+    let totalRondas = 0;
+    let maxRondas = 5; // el mejor de 5 intentos
+    while (totalRondas < maxRondas) {
+
+        if (puntosJugador === 3) {
+            instrucciones.innerHTML = "FELICIDADES! Ganaste el juego!🥳";
+            instrucciones.style.color = "green"; // Cambia el color del texto a verde
+            instrucciones.style.fontSize = "24px"; // Cambia el tamaño de fuente
+
+
+            opcionesJuego.classList.add('disabled');
+            campoBatalla.classList.add('disabled');
+            subtitulo.classList.add('disabled');
+            break;
+        }
+        if (puntosPc === 3) {
+            instrucciones.innerHTML = "PERDISTE! La computadora ganó el juego.😓";
+            instrucciones.style.color = "red"; // Cambia el color del texto a verde
+            instrucciones.style.fontSize = "24px"; // Cambia el tamaño de fuente
+
+            opcionesJuego.classList.add('disabled');
+            campoBatalla.classList.add('disabled');
+            subtitulo.classList.add('disabled');
+            break;
+        }
+        totalRondas++;
+    }
+}
+```
+
+### Ejemplo de Código: Botón de reinicio
+
+_En esta sección del código, establezco cómo funciona el botón que resetea el juego._ 
+
+```
+/* Resetea los datos del tablero de puntos a 0 y la cantidad de rondas. Deshabilita en botón de 
+reinicio y mensajes y habilita el de las opciones nuevamente. */
+function reiniciarJuego() {
+    reiniciar.classList.add('disabled');
+    opcionesJuego.classList.remove('disabled');
+    mensaje.classList.add('disabled');
+    campoBatalla.classList.add('disabled');
+    restaurarEstiloInstrucciones();
+    puntosJugador = 0;
+    puntosPc = 0;
+    totalRondas = 0;
+    marcadorPuntosJugador.innerHTML = puntosJugador;
+    marcadorPuntosPc.innerHTML = puntosPc;
+    instrucciones.innerHTML = "El mejor de <strong>5 intentos</strong> gana.";
+
+    // Elimina las imágenes del jugador y la computadora del campo de batalla
+    imgJugador.parentNode.removeChild(imgJugador);
+    imgPc.parentNode.removeChild(imgPc);
+
+}
+```
 
 ## Construido con 🧱
 
