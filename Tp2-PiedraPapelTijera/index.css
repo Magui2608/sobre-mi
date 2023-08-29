@@ -21,6 +21,9 @@ hace que el margin y el padding no ocupen espacio. */
 body {
     background-color: var(--background);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
 }
 
 /* Añado estructura al header, le aplico color de fondo un pequeño padding 
@@ -125,9 +128,10 @@ contenido al centro y aplico un borde de color redondeado. */
     margin: 25px;
 }
 
-.img-ataque{
+.img-ataque {
     border-radius: 3rem;
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave a la propiedad transform */
+    transition: transform 0.3s ease-in-out;
+    /* Agrega una transición suave a la propiedad transform */
 }
 
 /* Aplica tamaño de fuente, grosor, margen y centra el título de opciones. */
@@ -149,7 +153,7 @@ h2 {
     border: 0;
     border-radius: 1rem;
     font-size: 1rem;
-    padding: .3rem;    
+    padding: .3rem;
 }
 
 /*Agrega animación sobre los botones de elecciones cuando se pasa el cursor sobre ellos, 
@@ -202,9 +206,10 @@ márgenes, borde redondeado, tamaño de la fuente y cambio de estilo de cursor. 
     text-transform: uppercase;
     font-weight: 600;
 }
-.btn:hover{
+
+.btn:hover {
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .2);
-    font-size:larger;
+    font-size: larger;
     background-color: var(--green);
     transition: 300ms;
 }
@@ -309,4 +314,29 @@ aplicándola al ícono correspondiente a cada una. De manera que al pasar el cur
 .navmap-list-title-backend {
     color: #25D285;
     border-left: 4px solid #25D285;
+}
+
+/* Estilos para dispositivos móviles y pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Ajusta el tamaño de los botones de opción */
+    .opcion {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+
+    /* Ajusta los márgenes de las opciones */
+    .opciones-juego {
+        margin-top: 10px;
+    }
+
+    /* Ajusta el tamaño de fuente de los marcadores de puntos */
+    #puntos-jugador,
+    #puntos-pc {
+        font-size: 16px;
+    }
 }
